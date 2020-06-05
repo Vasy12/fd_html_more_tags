@@ -1,1 +1,17 @@
 
+#articles {
+    counter-reset: articles;
+}
+
+.article-item {
+    counter-increment: articles;
+}
+
+.article-item::before {
+    content: 'Article #' counter(articles);
+}
+
+.article-item > h2::before {
+    content: counter(articles) ". ";
+
+}
