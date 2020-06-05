@@ -4,14 +4,22 @@
 }
 
 .article-item {
+
     counter-increment: articles;
 }
 
-.article-item::before {
-    content: 'Article #' counter(articles);
-}
 
 .article-item > h2::before {
     content: counter(articles) ". ";
 
+}
+
+ol {
+    counter-reset: items;
+    list-style-type: none;
+}
+
+li::before {
+    counter-increment: items;
+    content: counters(items, '.') " ";
 }
